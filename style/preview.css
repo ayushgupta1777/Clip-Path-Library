@@ -1,0 +1,115 @@
+.demo{
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+.playground-wrap{
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  width: 900px;
+  gap:40px;
+}
+
+
+
+.profile-card{
+  flex:1;
+  background:linear-gradient(135deg,#1a1a2e,#0f0f1e);
+  border-radius:20px;
+  padding:30px;
+  text-align:center;
+  cursor:pointer;
+  height:260px;
+  overflow:hidden;
+  transition:.4s;
+}
+
+.profile-card img{
+  width:100px;
+  height: 100px;
+  border-radius:50%;
+  margin-bottom:12px;
+}
+
+.role{ color:var(--gray-text); }
+
+.more{
+  opacity:0;
+  transform:translateY(20px);
+  transition:.3s;
+}
+
+
+#toggle:checked + .profile-card{
+  height:380px;
+}
+
+#toggle:checked + .profile-card .more{
+  opacity:1; 
+  transform:none;
+  margin-top:20px;
+}
+
+
+
+.btn{
+  display:inline-block;
+  margin-top:12px;
+  padding:8px 20px;
+  border-radius:25px;
+  background:linear-gradient(90deg,#00f0ff,#ff00de);
+  font-weight:600;
+}
+
+
+.code-panel{
+  flex:1;
+  background:#0b0b18;
+  border-radius:16px;
+  padding:20px;
+  color:#a0a0b0;
+}
+
+
+/* --------------demo-flip-card----------------- */
+  .demo-flip-container {
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.demo-flip-card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform .8s cubic-bezier(.4,0,.2,1);
+}
+
+.demo-flip-container:hover .demo-flip-card {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.flip-front {
+  background: linear-gradient(135deg, #00f0ff, #ff00de);
+}
+
+.flip-back {
+  background: linear-gradient(135deg, #39ff14, #ff1744);
+  transform: rotateY(180deg);
+}
